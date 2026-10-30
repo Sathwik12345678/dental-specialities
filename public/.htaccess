@@ -1,0 +1,25 @@
+ErrorDocument 404 /404.html
+RewriteEngine On
+RewriteRule ^results(?:\.html)?/?$ /reviews.html [R=301,L]
+RewriteRule ^reviews/?$ reviews.html [L]
+RewriteRule ^blog/?$ blog.html [L]
+RewriteRule ^blog/aligners-vs-braces/?$ aligners-vs-braces.html [L]
+RewriteRule ^blog/aligner-consultation/?$ aligner-consultation.html [L]
+RewriteRule ^blog/orthodontic-assessment/?$ orthodontic-assessment.html [L]
+
+# During staging, every visitor must receive the current shared assets. This
+# prevents the CDN from mixing older JavaScript/CSS with newer page markup.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+RewriteRule ^blog/dental-implants-guide/?$ dental-implants-guide.html [L]
+
+# Vite serves the React app for every public page; static assets remain direct
+# requests. Lead delivery is handled by the separately deployed Node CRM.
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [L]

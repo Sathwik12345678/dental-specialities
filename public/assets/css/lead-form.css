@@ -1,0 +1,150 @@
+.ds-lead-field input:not([type="checkbox"]),
+.ds-lead-field select,
+.ds-lead-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: .7rem .8rem;
+  border: 1px solid rgba(48, 66, 84, .24);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--navy, #17324d);
+  font: inherit;
+  font-size: 16px;
+}
+
+.ds-lead-field textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.ds-lead-field label,
+.ds-contact-method legend {
+  display: block;
+  margin-bottom: .3rem;
+  color: var(--navy, #17324d);
+  font-weight: 700;
+}
+
+.ds-lead-field .lead-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: .45rem;
+  line-height: 1.4;
+}
+
+.ds-lead-field .lead-consent input[type="checkbox"] {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  min-height: 16px;
+  margin: .1rem 0 0;
+  padding: 0;
+}
+
+.ds-contact-method {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1rem;
+  min-width: 0;
+  margin: 0;
+  padding: .65rem .8rem;
+  border: 1px solid rgba(48, 66, 84, .2);
+  border-radius: 10px;
+}
+
+.ds-contact-method legend {
+  padding: 0 .2rem;
+}
+
+.ds-radio-choice {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: .35rem;
+}
+
+.ds-radio-choice input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.ds-form-status,
+.ds-sunday-notice {
+  margin: .25rem 0;
+  color: var(--navy, #17324d);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.ds-form-status:empty,
+.ds-sunday-notice[hidden] {
+  display: none;
+}
+
+.ds-field-error {
+  display: block;
+  margin-top: .25rem;
+  color: #8a1c1c;
+  font-size: .84rem;
+  line-height: 1.4;
+}
+
+.ds-lead-field [aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.ds-lead-intro {
+  margin: 0 0 .5rem;
+  color: var(--muted, #586b7a);
+  line-height: 1.5;
+}
+
+.ds-form-status a {
+  color: var(--cyan-ink, #006f78);
+  font-weight: 700;
+}
+
+form[data-wa] button[type="submit"] {
+  min-height: 44px;
+}
+
+.consult-modal .modal-close {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.ds-noscript {
+  position: fixed;
+  z-index: 300;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  padding: .9rem 1rem;
+  border: 1px solid rgba(48, 66, 84, .2);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--navy, #17324d);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .14);
+  text-align: center;
+}
+
+.ds-noscript a {
+  color: var(--cyan-ink, #006f78);
+  font-weight: 700;
+}
+
+html:not(.js) form[data-wa] {
+  display: none !important;
+}
+
+@media (max-width: 580px) {
+  .ds-lead-field input:not([type="checkbox"]),
+  .ds-lead-field select,
+  .ds-lead-field textarea,
+  .ds-form-status,
+  .ds-lead-intro {
+    font-size: 16px;
+  }
+}

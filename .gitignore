@@ -1,0 +1,12 @@
+# Local development files
+__pycache__/
+*.py[cod]
+
+# Editor and operating-system metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+/vendor/
+node_modules/
+dist/
